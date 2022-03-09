@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { AppBar } from "@mui/material";
 const NavBar = () => {
 	return (
 		<div>
+			<AppBar></AppBar>
 			<ul>
 				<li>
 					<Link to="/">Home</Link>

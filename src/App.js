@@ -5,6 +5,8 @@ import Populares from "./components/Populares";
 import Buscar from "./components/Buscar";
 import UltimosLanzamientos from "./components/UltimosLanzamientos";
 import DetallesPeliculas from "./components/DetallesPeliculas";
+import ListaPeliculas from "./components/ListaPeliculas";
+import "./App.css";
 const App = () => {
 	return (
 		<div>
