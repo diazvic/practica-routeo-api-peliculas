@@ -1,5 +1,10 @@
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
 import { useEffect, useState } from "react";
 import PeliculaListaItem from "./PeliculaListaItem";
+import CardContent from "@mui/material/CardContent";
+import Typography from "@mui/material/Typography";
+import { AppBar } from "@mui/material";
 const ListaPeliculas = ({ titulo, url }) => {
 	const [peliculas, setPeliculas] = useState([]);
 
@@ -13,16 +18,35 @@ const ListaPeliculas = ({ titulo, url }) => {
 
 	return (
 		<div className="lista-peliculas">
-			<h3>{titulo}</h3>
+			<Typography
+				variant="h4"
+				sx={{
+					display: "flex",
+					justifyContent: "center",
+					color: "#ffffff",
+					bgcolor: "#001529",
+					fontWeight: "small",
+				}}
+			>
+				{titulo}
+			</Typography>
+
 			{peliculas.map((pelicula) => (
 				// aca deberia ir un componente tarjeta
 				// <p key={pelicula.id}>{pelicula.title}</p>
-				<PeliculaListaItem
-					key={pelicula.id}
-					titulo={pelicula.title}
-					imagen={`https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`}
-					link={`/${pelicula.id}`}
-				/>
+				<Box>
+					<Card sx={{ m: 2 }}>
+						<CardContent>
+							<PeliculaListaItem
+								sx={{}}
+								key={pelicula.id}
+								titulo={pelicula.title}
+								imagen={`https://image.tmdb.org/t/p/w300/${pelicula.poster_path}`}
+								link={`/${pelicula.id}`}
+							/>
+						</CardContent>
+					</Card>
+				</Box>
 			))}
 		</div>
 	);
